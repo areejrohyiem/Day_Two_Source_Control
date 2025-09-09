@@ -1,0 +1,43 @@
+1-Make a project deployment.
+  https://areejrohyiem.github.io/Day_Two_Source_Control/
+
+What is Pull Request and Request? Difference between them?
+Request: A general ask for something (not specific to Git).
+Pull Request : A feature of GitHub/GitLab where you ask to merge changes from your branch/repo into another branch/repo.  
+Difference: Pull Request = a type of request, but specific to Git/GitHub for code collaboration.
+
+---
+4. What is the command to delete the branch "new-email"?
+   # Delete locally
+git branch -d new-email
+# Force delete (if not merged)
+git branch -D new-email
+
+# Delete remotely
+git push origin --delete new-email
+5. What is the command to push the current repository to the remote origin?
+git push origin main
+6. What is Git Rebase and how to use it?
+
+Definition: Rebase rewrites commits from one branch on top of another branch, creating a linear history
+Usage:
+git checkout feature-branch
+git rebase main
+7. What is the command to get all the change history of the remote repository "origin"?
+git fetch origin
+git log origin/main --oneline
+8. What is the command to show the differences between the current branch and the branch "new-email"?
+git diff new-email
+9. What is Tags and Make five tags and release two of them?
+
+Tags: Named pointers to specific commits, often used for releases.
+
+# Create 5 tags
+git tag v1.0
+git tag v1.1
+git tag v2.0
+git tag bugfix-1
+git tag beta-1
+
+# Push 2 tags (releases)
+git push origin v1.0
