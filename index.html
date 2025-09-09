@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git & GitHub Task</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    pre {
+      background: #222;
+      color: #eee;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    .question {
+      background: #fff;
+      margin: 20px 0;
+      padding: 15px;
+      border-left: 6px solid #007acc;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Git & GitHub Task</h1>
+
+  <div class="question">
+    <h2>1. Make a project deployment</h2>
+    <p>
+      Deployment in GitHub means publishing the project, usually by pushing it to a remote repo 
+      (e.g., GitHub Pages, Vercel, Netlify).
+    </p>
+    <ol>
+      <li>Push your project to GitHub.</li>
+      <li>Go to repo Settings → Pages.</li>
+      <li>Select branch <b>main</b> and root folder.</li>
+      <li>Save → your project is deployed with a public URL.</li>
+    </ol>
+  </div>
+
+  <div class="question">
+    <h2>2. What is Pull Request and Request? Difference between them?</h2>
+    <p><b>Request:</b> A general ask for something (not specific to Git).</p>
+    <p><b>Pull Request (PR):</b> A GitHub/GitLab feature where you ask to merge changes from your branch/repo into another branch/repo.</p>
+    <p><b>➡️ Difference:</b> Pull Request = a type of request, but specific to Git/GitHub for code collaboration.</p>
+  </div>
+
+  <div class="question">
+    <h2>3. Make fork from your project and use it from another account</h2>
+    <p>On GitHub → go to your project → click <b>Fork</b> → choose another account.</p>
+    <pre>git clone https://github.com/ANOTHER-ACCOUNT/your-project.git</pre>
+  </div>
+
+  <div class="question">
+    <h2>4. Command to delete the branch "new-email"</h2>
+    <pre>
+# Delete locally
+git branch -d new-email
+# Force delete
+git branch -D new-email
+
+# Delete remotely
+git push origin --delete new-email
+    </pre>
+  </div>
+
+  <div class="question">
+    <h2>5. Command to push the current repository to the remote origin</h2>
+    <pre>git push origin main</pre>
+  </div>
+
+  <div class="question">
+    <h2>6. Git Rebase and how to use it</h2>
+    <p><b>Definition:</b> Rebase rewrites commits from one branch on top of another branch, creating a linear history.</p>
+    <pre>
+git checkout feature-branch
+git rebase main
+    </pre>
+  </div>
+
+  <div class="question">
+    <h2>7. Command to get all the change history of the remote repository "origin"</h2>
+    <pre>
+git fetch origin
+git log origin/main --oneline
+    </pre>
+  </div>
+
+  <div class="question">
+    <h2>8. Command to show the differences between the current branch and the branch "new-email"</h2>
+    <pre>git diff new-email</pre>
+  </div>
+
+  <div class="question">
+    <h2>9. Tags and make five tags and release two of them</h2>
+    <p><b>Tags:</b> Named pointers to specific commits, often used for releases.</p>
+    <pre>
+git tag v1.0
+git tag v1.1
+git tag v2.0
+git tag bugfix-1
+git tag beta-1
+
+git push origin v1.0
+git push origin v2.0
+    </pre>
+  </div>
+
+  <div class="question">
+    <h2>Bonus: Make SSH to your repo</h2>
+    <pre>
+ssh-keygen -t ed25519 -C "your_email@example.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
+ssh -T git@github.com
+    </pre>
+  </div>
+</body>
+</html>
